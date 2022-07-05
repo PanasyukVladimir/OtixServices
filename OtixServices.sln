@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{9BF66981-73E3-4FB5-B7B8-5AE19453A90E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{83207F2A-C40C-4429-875B-3FD437C5C560}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6E9D7CBC-DAEA-4EA3-9911-B57F952D50BF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{963822FC-A398-4A37-8C8C-155D368FFF2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Money.Domain", "Domain\Money.Domain\Money.Domain.csproj", "{6EAA6D47-7195-4348-AB23-0418D2E98583}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Money.WebAPI", "Money.WebAPI\Money.WebAPI.csproj", "{B1963C0E-3E5A-4831-8BBD-C6688D96DBEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6EAA6D47-7195-4348-AB23-0418D2E98583}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EAA6D47-7195-4348-AB23-0418D2E98583}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EAA6D47-7195-4348-AB23-0418D2E98583}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EAA6D47-7195-4348-AB23-0418D2E98583}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1963C0E-3E5A-4831-8BBD-C6688D96DBEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1963C0E-3E5A-4831-8BBD-C6688D96DBEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1963C0E-3E5A-4831-8BBD-C6688D96DBEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1963C0E-3E5A-4831-8BBD-C6688D96DBEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6EAA6D47-7195-4348-AB23-0418D2E98583} = {963822FC-A398-4A37-8C8C-155D368FFF2D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A4623E10-6612-434A-8693-8C820E6469CB}
+	EndGlobalSection
+EndGlobal

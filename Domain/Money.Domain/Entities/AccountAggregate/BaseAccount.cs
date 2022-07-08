@@ -13,7 +13,7 @@ namespace Money.Domain.Entities.AccountAggregate
         EUR = 3
     }
     /// <summary>
-    /// Абстрактний клас для рахунку
+    /// Abstract class for account
     /// </summary>
     public abstract class BaseAccount
     {

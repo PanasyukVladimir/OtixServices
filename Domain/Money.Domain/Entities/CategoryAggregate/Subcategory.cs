@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Money.Domain.Entities.CategoryAggregate
 {
     /// <summary>
-    /// Підкатегорія для категорії (Категорія - продукти, підкатегорія - овочі, фрукти, мясо...)
+    /// Subcategory for the category (Category - products, subcategory - vegetables, fruits, meat...)
     /// </summary>
     public class Subcategory
     {

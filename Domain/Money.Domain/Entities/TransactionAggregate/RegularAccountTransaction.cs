@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Money.Domain.Entities.TransactionAggregate
 {
     /// <summary>
-    /// Транзакція між звичайними рахунками
+    /// A transaction between regular accounts
     /// </summary>
     public class RegularAccountTransaction : BaseTransaction
     {

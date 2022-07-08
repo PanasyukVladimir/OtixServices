@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Money.Domain.Entities.AccountAggregate
 {
     /// <summary>
-    /// Накопичувальний рахунок
+    /// Accumulation account
     /// </summary>
     public class SavingAccount : BaseAccount
     {

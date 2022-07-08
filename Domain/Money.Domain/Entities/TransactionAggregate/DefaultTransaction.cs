@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Money.Domain.Entities.TransactionAggregate
 {
     /// <summary>
-    /// Транзакція для 
+    /// Transaction for expenses/revenues
     /// </summary>
     public class DefaultTransaction : BaseTransaction
     {

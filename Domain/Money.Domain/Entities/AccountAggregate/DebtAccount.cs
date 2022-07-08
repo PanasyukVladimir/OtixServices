@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Money.Domain.Entities.AccountAggregate
 {
     /// <summary>
-    /// Борговий рахунок
+    /// Debt account
     /// </summary>
     public class DebtAccount : BaseAccount
     {

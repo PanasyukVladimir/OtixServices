@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Money.Domain.Entities
 {
     /// <summary>
-    /// Користувач
+    /// User
     /// </summary>
     public class User
     {

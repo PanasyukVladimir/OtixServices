@@ -19,7 +19,7 @@ namespace Money.Domain.Entities.CategoryAggregate
         Income = 2
     }
     /// <summary>
-    /// Категорія витрат або доходів
+    /// Category of expenses or income
     /// </summary>
     public class Category
     {

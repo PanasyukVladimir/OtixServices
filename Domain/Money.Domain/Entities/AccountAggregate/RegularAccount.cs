@@ -13,7 +13,7 @@ namespace Money.Domain.Entities.AccountAggregate
         Cash = 2
     }
     /// <summary>
-    /// Звичайний рахунок (Готівка/карта)
+    /// Usual account (Cash/card)
     /// </summary>
     public class RegularAccount : BaseAccount
     {

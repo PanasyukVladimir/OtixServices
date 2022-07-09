@@ -14,9 +14,12 @@ namespace Money.Domain.Entities
     public class User
     {
         public int Id { get; set; }
+        //[Required]
         public string Login { get; set; }
+        //[NotMapped]
         public string Password { get; set; } 
         public string Name { get; set; }
+        //[Required]
         public string Email { get; set; }
         public bool IsEmailConfirmed { get; set; }
 

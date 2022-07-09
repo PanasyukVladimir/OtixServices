@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace Money.Domain.Repositories
 {
-    public interface ITransactionRepository
+    public interface ITransactionRepository<T> where T : BaseTransaction
     {
-        T GetTransaction<T>(int transactionId) where T : BaseTransaction;
-        IEnumerable<T> GetAllTransactionsBy<T>(int accountId) where T : BaseTransaction;
-        void CreateTransaction<T>(T transaction) where T : BaseTransaction;
-        void UpdateTransaction<T>(T transaction) where T : BaseTransaction;
-        void RemoveTransaction<T>(T transaction) where T : BaseTransaction;
+        T GetTransaction(int transactionId);
+        IEnumerable<T> GetAllTransactionsBy(int accountId);
+        void CreateTransaction(T transaction);
+        void UpdateTransaction(T transaction);
+        void RemoveTransaction(T transaction);
     }
 }

@@ -8,5 +8,9 @@
     <PackageReference Include="NSwag.AspNetCore" Version="13.16.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\Money.EF\Money.EF.csproj" />
+  </ItemGroup>
+
 
 </Project>

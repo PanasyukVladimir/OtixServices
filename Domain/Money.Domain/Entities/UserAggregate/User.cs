@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Money.Domain.Entities
+namespace Money.Domain.Entities.UserAggregate
 {
     /// <summary>
     /// User

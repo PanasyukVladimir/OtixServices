@@ -1,36 +1,47 @@
-﻿using Money.Domain.Entities.AccountAggregate;
+﻿using Microsoft.EntityFrameworkCore;
+using Money.Domain.Entities.AccountAggregate;
 using Money.Domain.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Money.EF.Repositories
 {
     public class RegularAccountRepository : IAccountRepository<RegularAccount>
     {
-        public void CreateAccount(RegularAccount account)
+        private readonly MoneyContext _context;
+        public RegularAccountRepository(MoneyContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
         public RegularAccount GetAccount(int accountId)
         {
-            throw new NotImplementedException();
+            return _context.RegularAccounts.FirstOrDefault(c => c.Id == accountId);
         }
 
         public IEnumerable<RegularAccount> GetAccountsByUserId(int userId)
         {
-            throw new NotImplementedException();
+            return _context.RegularAccounts.Where(c => c.UserId == userId);
+        }
+        public void CreateAccount(RegularAccount account)
+        {
+            _context.RegularAccounts.Add(account);
+            _context.SaveChanges();
         }
 
         public void RemoveAccount(RegularAccount account)
         {
-            throw new NotImplementedException();
+            _context.RegularAccounts.Remove(account);
+            _context.SaveChanges();
         }
 
         public void UpdateAccount(RegularAccount account)
         {
-            throw new NotImplementedException();
+            _context.RegularAccounts.Attach(account);
+            _context.Entry(account).State = EntityState.Modified;
+            _context.SaveChanges();
         }
     }
 }

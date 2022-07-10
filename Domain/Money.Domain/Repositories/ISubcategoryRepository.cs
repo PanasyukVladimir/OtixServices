@@ -9,10 +9,10 @@ namespace Money.Domain.Repositories
 {
     public interface ISubategoryRepository
     {
-        Subcategory GetSubcategory(int subcategoryId);
+        Subcategory GetSubcategory(int categoryId);
         IEnumerable<Subcategory> GetAllSubcategoriesByCategoryId(int categoryId);
-        void CreateSubcategory(Subcategory category);
-        void UpdateSubcategory(Subcategory category);
-        void RemoveSubcategory(Subcategory category);
+        void CreateSubcategory(Subcategory subcategory);
+        void UpdateSubcategory(Subcategory subcategory);
+        void RemoveSubcategory(Subcategory subcategory);
     }
 }

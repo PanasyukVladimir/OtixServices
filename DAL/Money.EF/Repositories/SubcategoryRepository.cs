@@ -1,36 +1,47 @@
-﻿using Money.Domain.Entities.CategoryAggregate;
+﻿using Microsoft.EntityFrameworkCore;
+using Money.Domain.Entities.CategoryAggregate;
 using Money.Domain.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Money.EF.Repositories
 {
     public class SubcategoryRepository : ISubategoryRepository
     {
-        public void CreateSubcategory(Subcategory category)
+        private readonly MoneyContext _context;
+        public SubcategoryRepository(MoneyContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
         public IEnumerable<Subcategory> GetAllSubcategoriesByCategoryId(int categoryId)
         {
-            throw new NotImplementedException();
+            return _context.Subcategories.Where(c => c.CategoryId == categoryId);
         }
 
         public Subcategory GetSubcategory(int subcategoryId)
         {
-            throw new NotImplementedException();
+            return _context.Subcategories.FirstOrDefault(c => c.Id == subcategoryId);
+        }
+        public void CreateSubcategory(Subcategory subcategory)
+        {
+            _context.Subcategories.Add(subcategory);
+            _context.SaveChanges();
         }
 
-        public void RemoveSubcategory(Subcategory category)
+        public void RemoveSubcategory(Subcategory subcategory)
         {
-            throw new NotImplementedException();
+            _context.Subcategories.Remove(subcategory);
+            _context.SaveChanges();
         }
 
-        public void UpdateSubcategory(Subcategory category)
+        public void UpdateSubcategory(Subcategory subcategory)
         {
-            throw new NotImplementedException();
+            _context.Subcategories.Attach(subcategory);
+            _context.Entry(subcategory).State = EntityState.Modified;
+            _context.SaveChanges();
         }
     }
 }

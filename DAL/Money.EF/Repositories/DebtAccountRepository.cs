@@ -1,36 +1,48 @@
-﻿using Money.Domain.Entities.AccountAggregate;
+﻿using Microsoft.EntityFrameworkCore;
+using Money.Domain.Entities.AccountAggregate;
 using Money.Domain.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Money.EF.Repositories
 {
     public class DebtAccountRepository : IAccountRepository<DebtAccount>
     {
+        private readonly MoneyContext _context;
+        public DebtAccountRepository(MoneyContext context)
+        {
+            _context = context;
+        }
+
         public DebtAccount GetAccount(int accountId)
         {
-            throw new NotImplementedException();
+            return _context.DebtAccounts.FirstOrDefault(c => c.Id == accountId);
         }
 
         public IEnumerable<DebtAccount> GetAccountsByUserId(int userId)
         {
-            throw new NotImplementedException();
+            return _context.DebtAccounts.Where(c => c.UserId == userId);
         }
 
         public void CreateAccount(DebtAccount account)
         {
-            throw new NotImplementedException();
+            _context.DebtAccounts.Add(account);
+            _context.SaveChanges();
         }
 
         public void RemoveAccount(DebtAccount account)
         {
-            throw new NotImplementedException();
+            _context.DebtAccounts.Remove(account);
+            _context.SaveChanges();
         }
 
         public void UpdateAccount(DebtAccount account)
         {
-            throw new NotImplementedException();
+            _context.DebtAccounts.Attach(account);
+            _context.Entry(account).State = EntityState.Modified;
+            _context.SaveChanges();
         }
     }
 }

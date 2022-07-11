@@ -16,7 +16,7 @@ namespace Money.EF.Repositories
             _context = context;
         }
 
-        public RegularAccount GetAccount(int accountId)
+        public RegularAccount GetAccountById(int accountId)
         {
             return _context.RegularAccounts.FirstOrDefault(c => c.Id == accountId);
         }

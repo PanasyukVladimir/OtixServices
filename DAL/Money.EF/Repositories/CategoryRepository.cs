@@ -21,7 +21,7 @@ namespace Money.EF.Repositories
             return _context.Categories.Where(c => c.UserId == userId);
         }
 
-        public Category GetCategory(int categoryId)
+        public Category GetCategoryById(int categoryId)
         {
             return _context.Categories.FirstOrDefault(c => c.Id == categoryId);
         }

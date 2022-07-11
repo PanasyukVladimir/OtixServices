@@ -16,12 +16,12 @@ namespace Money.EF.Repositories
             _context = context;
         }
 
-        public IEnumerable<DefaultTransaction> GetAllTransactionsBy(int accountId)
+        public IEnumerable<DefaultTransaction> GetAllTransactionsByAccountId(int accountId)
         {
             return _context.DefaultTransactions.Where(c => c.CategoryId == accountId);
         }
 
-        public DefaultTransaction GetTransaction(int transactionId)
+        public DefaultTransaction GetTransactionById(int transactionId)
         {
             return _context.DefaultTransactions.FirstOrDefault(c => c.Id == transactionId);
         }

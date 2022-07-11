@@ -18,7 +18,7 @@ namespace Money.Domain.Entities.AccountAggregate
     public class RegularAccount : BaseAccount
     {
         public double CreditLimit { get; set; }
-        public AccountCurrencyEnum TypeRegularAccount { get; set; }
+        public TypeRegularAccountEnum TypeRegularAccount { get; set; }
         public int UserId { get; set; }
 
         //public User User { get; set; }

@@ -21,7 +21,7 @@ namespace Money.EF.Repositories
             return _context.Subcategories.Where(c => c.CategoryId == categoryId);
         }
 
-        public Subcategory GetSubcategory(int subcategoryId)
+        public Subcategory GetSubcategoryById(int subcategoryId)
         {
             return _context.Subcategories.FirstOrDefault(c => c.Id == subcategoryId);
         }

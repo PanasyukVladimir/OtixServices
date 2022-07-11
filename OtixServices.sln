@@ -18,7 +18,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Money.EF", "DAL\Money.EF\Mo
 		{ED58AD52-0B6E-4128-B98A-52B80143B035} = {ED58AD52-0B6E-4128-B98A-52B80143B035}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Money.Domain", "Domain\Money.Domain\Money.Domain.csproj", "{ED58AD52-0B6E-4128-B98A-52B80143B035}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Money.Domain", "Domain\Money.Domain\Money.Domain.csproj", "{ED58AD52-0B6E-4128-B98A-52B80143B035}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Money.EF.Tests", "Tests\Money.EF.Tests\Money.EF.Tests.csproj", "{0D3349E9-CD03-4DB6-9F02-3E1781E9714E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +40,10 @@ Global
 		{ED58AD52-0B6E-4128-B98A-52B80143B035}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED58AD52-0B6E-4128-B98A-52B80143B035}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED58AD52-0B6E-4128-B98A-52B80143B035}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D3349E9-CD03-4DB6-9F02-3E1781E9714E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D3349E9-CD03-4DB6-9F02-3E1781E9714E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D3349E9-CD03-4DB6-9F02-3E1781E9714E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D3349E9-CD03-4DB6-9F02-3E1781E9714E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +51,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E767F84B-DC01-4916-A012-38A66141CCAD} = {9BF66981-73E3-4FB5-B7B8-5AE19453A90E}
 		{ED58AD52-0B6E-4128-B98A-52B80143B035} = {963822FC-A398-4A37-8C8C-155D368FFF2D}
+		{0D3349E9-CD03-4DB6-9F02-3E1781E9714E} = {6E9D7CBC-DAEA-4EA3-9911-B57F952D50BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A4623E10-6612-434A-8693-8C820E6469CB}

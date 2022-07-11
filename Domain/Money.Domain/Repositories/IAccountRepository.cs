@@ -10,7 +10,7 @@ namespace Money.Domain.Repositories
     public interface IAccountRepository<T> where T : BaseAccount
     {
         //IEnumerable<T> GetAllAccounts<T>();
-        T GetAccount(int accountId);
+        T GetAccountById(int accountId);
         IEnumerable<T> GetAccountsByUserId(int userId);
         void CreateAccount(T account);
         void UpdateAccount(T account);

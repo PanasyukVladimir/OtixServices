@@ -13,6 +13,7 @@ namespace Money.Domain.Entities.TransactionAggregate
     public class DefaultTransaction : BaseTransaction
     {
         public int CategoryId { get; set; }
+        public int? SubcategoryId { get; set; }
 
         //public Category Category { get; set; }
     }

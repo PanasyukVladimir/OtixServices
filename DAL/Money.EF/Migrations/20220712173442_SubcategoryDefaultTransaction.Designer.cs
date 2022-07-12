@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Money.EF;
 
 namespace Money.EF.Migrations
 {
     [DbContext(typeof(MoneyContext))]
-    partial class MoneyContextModelSnapshot : ModelSnapshot
+    [Migration("20220712173442_SubcategoryDefaultTransaction")]
+    partial class SubcategoryDefaultTransaction
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

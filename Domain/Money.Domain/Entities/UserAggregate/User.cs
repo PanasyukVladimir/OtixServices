@@ -1,4 +1,5 @@
-﻿using Money.Domain.Entities.AccountAggregate;
+﻿using Microsoft.AspNetCore.Identity;
+using Money.Domain.Entities.AccountAggregate;
 using Money.Domain.Entities.CategoryAggregate;
 using System;
 using System.Collections.Generic;
@@ -11,17 +12,17 @@ namespace Money.Domain.Entities.UserAggregate
     /// <summary>
     /// User
     /// </summary>
-    public class User
+    public class User : IdentityUser
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
         //[Required]
-        public string Login { get; set; }
+        //public string Login { get; set; }
         //[NotMapped]
-        public string Password { get; set; } 
+        //public string Password { get; set; } 
         public string Name { get; set; }
         //[Required]
-        public string Email { get; set; }
-        public bool IsEmailConfirmed { get; set; }
+        //public string Email { get; set; }
+        //public bool IsEmailConfirmed { get; set; }
 
         public List<Category> Categories { get; set; }
         public List<RegularAccount> RegularAccounts { get; set; }

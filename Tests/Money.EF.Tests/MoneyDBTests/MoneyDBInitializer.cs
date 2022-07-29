@@ -15,12 +15,11 @@ namespace Money.EF.Tests.MoneyDBTests
             context.Users.AddRange(
             new User
             {
-                Id = 1,
-                Login = "admin",
-                Password = "admin123",
-                Name = "OTIX",
+                Id = "1",
+                UserName = "admin",
+                PasswordHash = "admin123",
                 Email = "admin@gmail.com",
-                IsEmailConfirmed = true,
+                EmailConfirmed = true,
                 Categories = new List<Category>
                 {
                     new Category()
@@ -28,10 +27,9 @@ namespace Money.EF.Tests.MoneyDBTests
                         Id = 1,
                         Name = "Category1",
                         CategoryCurrency = CategoryCurrencyEnum.UAH,
-                        Description = "Category1",
                         Balance = 0,
                         TypeCategory = TypeCategoryEnum.Expenses,
-                        UserId = 1,
+                        UserId = "1",
                         DefaultTransactions = new List<DefaultTransaction>
                         {
                             new DefaultTransaction()
@@ -83,10 +81,9 @@ namespace Money.EF.Tests.MoneyDBTests
                         Id = 2,
                         Name = "Category2",
                         CategoryCurrency = CategoryCurrencyEnum.UAH,
-                        Description = "Category2",
                         Balance = 80000,
                         TypeCategory = TypeCategoryEnum.Expenses,
-                        UserId = 1,
+                        UserId = "1",
                         DefaultTransactions = new List<DefaultTransaction>
                         {
                             new DefaultTransaction()
@@ -114,10 +111,9 @@ namespace Money.EF.Tests.MoneyDBTests
                         Id = 3,
                         Name = "Category3",
                         CategoryCurrency = CategoryCurrencyEnum.UAH,
-                        Description = "Category3",
                         Balance = 6000,
                         TypeCategory = TypeCategoryEnum.Expenses,
-                        UserId = 1,
+                        UserId = "1",
                         DefaultTransactions = new List<DefaultTransaction>
                         {
                             new DefaultTransaction()
@@ -149,11 +145,9 @@ namespace Money.EF.Tests.MoneyDBTests
                         Id = 1,
                         Name = "RegularAccount1",
                         AccountCurrency = AccountCurrencyEnum.UAH,
-                        Description = "RegularAccount1",
                         Balance = 5000,
-                        CreditLimit = 0,
                         TypeRegularAccount = TypeRegularAccountEnum.Card,
-                        UserId = 1,
+                        UserId = "1",
                         RegularAccountTransactions = new List<RegularAccountTransaction>()
                         {
                             new RegularAccountTransaction()
@@ -172,11 +166,9 @@ namespace Money.EF.Tests.MoneyDBTests
                         Id = 2,
                         Name = "RegularAccount2",
                         AccountCurrency = AccountCurrencyEnum.UAH,
-                        Description = "RegularAccount2",
                         Balance = 50000,
-                        CreditLimit = 0,
                         TypeRegularAccount = TypeRegularAccountEnum.Cash,
-                        UserId = 1,
+                        UserId = "1",
                         RegularAccountTransactions = new List<RegularAccountTransaction>()
                         {
                             new RegularAccountTransaction()
@@ -198,10 +190,9 @@ namespace Money.EF.Tests.MoneyDBTests
                         Id = 1,
                         Name = "SavingAccount1",
                         AccountCurrency = AccountCurrencyEnum.UAH,
-                        Description = "SavingAccount1",
                         Balance = 5000,
                         GoalSavingBalance = 50000000,
-                        UserId = 1,
+                        UserId = "1",
                         SavingAccountTransactions = new List<SavingAccountTransaction>()
                         {
                             new SavingAccountTransaction()
@@ -220,10 +211,9 @@ namespace Money.EF.Tests.MoneyDBTests
                         Id = 2,
                         Name = "SavingAccount2",
                         AccountCurrency = AccountCurrencyEnum.UAH,
-                        Description = "SavingAccount2",
                         Balance = 500,
                         GoalSavingBalance = 5000,
-                        UserId = 1,
+                        UserId = "1",
                         SavingAccountTransactions = new List<SavingAccountTransaction>()
                         {
                             new SavingAccountTransaction()
@@ -245,9 +235,8 @@ namespace Money.EF.Tests.MoneyDBTests
                         Id = 1,
                         Name = "DebtAccount1",
                         AccountCurrency = AccountCurrencyEnum.UAH,
-                        Description = "DebtAccount1",
                         Balance = 500,
-                        UserId = 1,
+                        UserId = "1",
                         DebtAccountTransactions = new List<DebtAccountTransaction>()
                         {
                             new DebtAccountTransaction()
@@ -266,9 +255,8 @@ namespace Money.EF.Tests.MoneyDBTests
                         Id = 2,
                         Name = "DebtAccount2",
                         AccountCurrency = AccountCurrencyEnum.UAH,
-                        Description = "DebtAccount2",
                         Balance = 500,
-                        UserId = 1,
+                        UserId = "1",
                         DebtAccountTransactions = new List<DebtAccountTransaction>()
                         {
                             new DebtAccountTransaction()
@@ -286,21 +274,19 @@ namespace Money.EF.Tests.MoneyDBTests
             },
             new User
             {
-                Id = 2,
-                Login = "user1",
-                Password = "user123",
-                Name = "USER1",
+                Id = "2",
+                UserName = "user1",
+                PasswordHash = "user123",
                 Email = "user1@gmail.com",
-                IsEmailConfirmed = true
+                EmailConfirmed = true
             },
             new User
             {
-                Id = 3,
-                Login = "user2",
-                Password = "user1234",
-                Name = "USER2",
+                Id = "3",
+                UserName = "user2",
+                PasswordHash = "user1234",
                 Email = "user2@gmail.com",
-                IsEmailConfirmed = true
+                EmailConfirmed = true
             });
 
             context.SaveChanges();

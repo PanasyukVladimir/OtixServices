@@ -9,11 +9,14 @@ namespace Money.Domain.Repositories
 {
     public interface IUserRepository
     {
+        /*
         //IEnumerable<User> GetAllUsers();
-        User GetUserById(int userId);
-        User GetUserByLoginPassword(string login, string password);
+        User GetUserById(string userId);
+        User GetUserByLoginPassword(string userName, string password);
+        bool IsExistsLoginOrEmail(string userName, string email);
         void CreateUser(User user);
         void UpdateUser(User user);
         void RemoveUser(User user);
+        */
     }
 }

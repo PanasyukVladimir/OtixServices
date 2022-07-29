@@ -10,7 +10,7 @@ namespace Money.Domain.Repositories
     public interface ICategoryRepository
     {
         Category GetCategoryById(int categoryId);
-        IEnumerable<Category> GetAllCategoriesByUserId(int userId);
+        IEnumerable<Category> GetAllCategoriesByUserId(string userId);
         void CreateCategory(Category category);
         void UpdateCategory(Category category);
         void RemoveCategory(Category category);

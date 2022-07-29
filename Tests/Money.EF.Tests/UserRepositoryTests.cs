@@ -2,28 +2,29 @@
 using Money.EF.Repositories;
 using Money.EF.Tests.MoneyDBTests;
 using NUnit.Framework;
+using System.Linq;
 
 namespace Money.EF.Tests
 {
     [TestFixture]
     public class UserRepositoryTests : MoneyDBTestBase
     {
+
         [TestCase(3)]
         public void GetUserByIdTest(int userId)
         {
             //Arrange
             var userRepository = new UserRepository(_context);
             var expected = new User {
-                Id = 3,
-                Login = "user2",
-                Password = "user1234",
-                Name = "USER2",
+                Id = "3",
+                UserName = "user2",
+                PasswordHash = "user1234",
                 Email = "user2@gmail.com",
-                IsEmailConfirmed = true
+                EmailConfirmed = true
             };
 
             //Act
-            User result = userRepository.GetUserById(userId);
+            User result = userRepository.GetUserById(userId.ToString());
 
             //Assert
             Assert.IsAssignableFrom(typeof(User), result);
@@ -38,12 +39,11 @@ namespace Money.EF.Tests
             var userRepository = new UserRepository(_context);
             var expected = new User
             {
-                Id = 3,
-                Login = "user2",
-                Password = "user1234",
-                Name = "USER2",
+                Id = "3",
+                UserName = "user2",
+                PasswordHash = "user1234",
                 Email = "user2@gmail.com",
-                IsEmailConfirmed = true
+                EmailConfirmed = true
             };
 
             //Act
@@ -61,12 +61,11 @@ namespace Money.EF.Tests
             var userRepository = new UserRepository(_context);
             var user = new User
             {
-                Id = 4,
-                Login = "user4",
-                Password = "user41234",
-                Name = "USER4",
+                Id = "4",
+                UserName = "user4",
+                PasswordHash = "user41234",
                 Email = "user4@gmail.com",
-                IsEmailConfirmed = true
+                EmailConfirmed = true
             };
 
             //Act
@@ -83,11 +82,11 @@ namespace Money.EF.Tests
         {
             //Arrange
             var userRepository = new UserRepository(_context);
-            var user = userRepository.GetUserById(3);
+            var user = userRepository.GetUserById(3.ToString());
 
             //Act
             userRepository.RemoveUser(user);
-            var deletedUser = userRepository.GetUserById(3);
+            var deletedUser = userRepository.GetUserById(3.ToString());
 
             //Assert
             Assert.IsNull(deletedUser);
@@ -98,18 +97,18 @@ namespace Money.EF.Tests
         {
             //Arrange
             var userRepository = new UserRepository(_context);
-            var user = userRepository.GetUserById(2);
+            var user = userRepository.GetUserById(2.ToString());
 
             //Act
-            user.Login = "newLoginUSER";
-            user.Password = "newPasswordUSER";
+            user.UserName = "newLoginUSER";
+            user.PasswordHash = "newPasswordUSER";
             userRepository.UpdateUser(user);
             var updetedUser = userRepository.GetUserByLoginPassword("newLoginUSER", "newPasswordUSER");
 
             //Assert
             Assert.IsInstanceOf(typeof(User), updetedUser);
-            Assert.AreEqual("newLoginUSER", updetedUser.Login);
-            Assert.AreEqual("newPasswordUSER", updetedUser.Password);
+            Assert.AreEqual("newLoginUSER", updetedUser.UserName);
+            Assert.AreEqual("newPasswordUSER", updetedUser.PasswordHash);
         }
     }
 }

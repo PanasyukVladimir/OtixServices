@@ -22,9 +22,8 @@ namespace Money.EF.Tests
                 Id = 1,
                 Name = "DebtAccount1",
                 AccountCurrency = AccountCurrencyEnum.UAH,
-                Description = "DebtAccount1",
                 Balance = 500,
-                UserId = 1
+                UserId = "1"
             };
 
             //Act
@@ -36,7 +35,7 @@ namespace Money.EF.Tests
         }
 
         [TestCase(1)]
-        public void GetAccountsByUserIdTest(int userId)
+        public void GetAccountsByUserIdTest(string userId)
         {
             //Arrange
             var debtAccountRepository = new DebtAccountRepository(_context);
@@ -59,9 +58,8 @@ namespace Money.EF.Tests
                 Id = 10,
                 Name = "newDebtAccount1",
                 AccountCurrency = AccountCurrencyEnum.UAH,
-                Description = "newDebtAccount1",
                 Balance = 500,
-                UserId = 1
+                UserId = "1"
             };
 
             //Act
@@ -97,14 +95,12 @@ namespace Money.EF.Tests
 
             //Act
             debtAccount.Name = "newNameDebtAccount";
-            debtAccount.Description = "newDescriptionDebtAccount";
             debtAccountRepository.UpdateAccount(debtAccount);
             var updetedDebtAccount = debtAccountRepository.GetAccountById(1);
 
             //Assert
             Assert.IsInstanceOf(typeof(DebtAccount), updetedDebtAccount);
             Assert.AreEqual("newNameDebtAccount", updetedDebtAccount.Name);
-            Assert.AreEqual("newDescriptionDebtAccount", updetedDebtAccount.Description);
         }
     }
 }

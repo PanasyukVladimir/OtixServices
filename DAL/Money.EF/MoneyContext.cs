@@ -6,10 +6,11 @@ using Money.Domain.Entities.TransactionAggregate;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Money.EF
 {
-    public class MoneyContext : DbContext
+    public class MoneyContext : IdentityDbContext<User>
     {
         public MoneyContext()
         {
@@ -21,7 +22,7 @@ namespace Money.EF
             //Database.EnsureCreated();
         }
 
-        public DbSet<User> Users { get; set; }
+        public override DbSet<User> Users { get; set; }
         public DbSet<DebtAccount> DebtAccounts { get; set; }
         public DbSet<RegularAccount> RegularAccounts { get; set; }
         public DbSet<SavingAccount> SavingAccounts { get; set; }
@@ -36,7 +37,8 @@ namespace Money.EF
         {
             //optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=MoneyDB;Trusted_Connection=True;");
             //optionsBuilder.LogTo(message => System.Diagnostics.Debug.WriteLine(message), new[] { RelationalEventId.CommandExecuted });
-            optionsBuilder.LogTo(message => System.Diagnostics.Debug.WriteLine(message));
+            
+            //optionsBuilder.LogTo(message => System.Diagnostics.Debug.WriteLine(message));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -53,10 +55,6 @@ namespace Money.EF
             modelBuilder.Entity<RegularAccount>().HasMany(b => b.RegularAccountTransactions).WithOne().HasForeignKey(k => k.RegularAccountId).OnDelete(DeleteBehavior.Cascade);
 
             #region Required
-            modelBuilder.Entity<User>().Property(b => b.Login).IsRequired();
-            modelBuilder.Entity<User>().Property(b => b.Email).IsRequired();
-            modelBuilder.Entity<User>().Property(b => b.Name).IsRequired();
-            modelBuilder.Entity<User>().Property(b => b.Password).IsRequired();
             modelBuilder.Entity<Subcategory>().Property(b => b.Name).IsRequired();
             modelBuilder.Entity<SavingAccount>().Property(b => b.Name).IsRequired();
             modelBuilder.Entity<RegularAccount>().Property(b => b.Name).IsRequired();
@@ -106,6 +104,7 @@ namespace Money.EF
             //modelBuilder.Entity<User>().Property(b => b.Email).HasMaxLength(50);
             //modelBuilder.Entity<User>().Property(b => b.Name).HasMaxLength(50);
             #endregion
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

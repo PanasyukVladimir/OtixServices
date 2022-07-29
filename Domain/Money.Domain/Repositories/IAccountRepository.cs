@@ -11,7 +11,7 @@ namespace Money.Domain.Repositories
     {
         //IEnumerable<T> GetAllAccounts<T>();
         T GetAccountById(int accountId);
-        IEnumerable<T> GetAccountsByUserId(int userId);
+        IEnumerable<T> GetAccountsByUserId(string userId);
         void CreateAccount(T account);
         void UpdateAccount(T account);
         void RemoveAccount(T account);

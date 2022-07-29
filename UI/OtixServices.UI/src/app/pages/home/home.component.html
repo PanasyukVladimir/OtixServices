@@ -1,0 +1,158 @@
+<div class=" content">
+    <div class=" row">
+        <div class=" col-md-12">
+            <div class=" card">
+                <div class=" card-body all-icons">
+
+
+                    <!--//SLIDER//
+<div id="carouselExampleDark" class="carousel carousel-dark slide pt-5" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="10000">
+                                <img src="https://w.wallhaven.cc/full/g8/wallhaven-g8w9yl.jpg" class="d-block w-100"
+                                    alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <div class="mask d-flex justify-content-center align-items-center">
+                                        <div class="card bg-dark card-body text-center text-white">
+                                            <h5>Метка первого слайда</h5>
+                                            <p>Некоторый репрезентативный заполнитель для первого слайда.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item" data-bs-interval="2000">
+                                <img src="https://leedsdigitalfestival.org/wp-content/uploads/2021/08/Digital-Leeds-Festival-2021_DL-Week-2000x800-v2-copy.jpg"
+                                    class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <div class="mask d-flex justify-content-center align-items-center">
+                                        <div class="card bg-dark card-body text-center text-white">
+                                            <h5>Метка второго слайда</h5>
+                                            <p>Некоторый репрезентативный заполнитель для второго слайда.</p>
+                                            <div class="col d-flex justify-content-center mb-2">
+                                                <button type="button" class="btn btn-outline-light btn-lg px-5"
+                                                    style="border-radius: 10px;" routerLink="/user">PROFILE<span
+                                                        class="sr-only">(current)</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://i.pinimg.com/originals/5f/f2/a1/5ff2a1bb7fda540b435b1127913f503b.jpg"
+                                    class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <div class="mask d-flex justify-content-center align-items-center">
+                                        <div class="card bg-dark card-body text-center text-white">
+                                            <h5>Метка третьего слайда</h5>
+                                            <p>Некоторый репрезентативный заполнитель для третьего слайда.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Предыдущий</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Следующий</span>
+                        </button>
+                    </div>
+-->
+
+
+
+
+
+
+
+
+
+                    <hr>
+
+                    <div class="col d-flex justify-content-center mb-2">
+                        <button type="button" class="btn btn-outline-light btn-lg px-5" style="border-radius: 10px;"
+                            routerLink="/register">
+                            REGISTER</button>
+                    </div>
+
+                    <hr>
+                    <div class="col d-flex justify-content-center mb-2">
+                        <button type="button" class="btn btn-outline-light btn-lg px-5" style="border-radius: 10px;"
+                            routerLink="/login">
+                            LOGIN</button>
+                    </div>
+
+                    <hr>
+                    <div class="col d-flex justify-content-center mb-2">
+                        <button type="button" class="btn btn-outline-light btn-lg px-5" style="border-radius: 10px;"
+                            routerLink="/user">
+                            USER PROFILE</button>
+                    </div>
+
+                    <hr>
+
+                    <div class="mask d-flex justify-content-center align-items-center">
+
+
+                        <!--//DASHBORD//
+            <table>
+            <tr>
+                <div class="">
+                    <div class="card bg-light card-body text-center mb-5">
+                        <td>
+                            <ngx-charts-pie-chart [results]="productSales" [view]="[700, 370]" [scheme]="colorScheme"
+                                [gradient]="gradient" [legend]="showLegend" [legendPosition]="legendPosition"
+                                [tooltipDisabled]="tooltipDisabled" [explodeSlices]="explodeSlices"
+                                [trimLabels]="trimLabels" [labels]="showLabels" [doughnut]="isDoughnut"
+                                (select)="onSelect($event)" (activate)="onActivate($event)"
+                                (deactivate)="onDeactivate($event)">
+                            </ngx-charts-pie-chart>
+                        </td>
+                    </div>
+                </div>
+            </tr>
+            <tr>
+                <div>
+                    <div class="card bg-light card-body text-center mb-5">
+                        <td>
+                            <ngx-charts-pie-grid [results]="productSales" [view]="[700, 370]" [scheme]="colorScheme"
+                                (select)="onSelect($event)" (activate)="onActivate($event)"
+                                (deactivate)="onDeactivate($event)">
+                            </ngx-charts-pie-grid>
+                        </td>
+                    </div>
+                </div>
+            </tr>
+            <tr>
+                <div>
+                    <div class="card bg-light card-body mb-5 p-5">
+                        <td class="">
+                            <ngx-charts-advanced-pie-chart [results]="productSales" [view]="[700, 370]"
+                                [scheme]="colorScheme" [gradient]="gradient" (select)="onSelect($event)"
+                                (activate)="onActivate($event)" (deactivate)="onDeactivate($event)">
+                            </ngx-charts-advanced-pie-chart>
+                        </td>
+                    </div>
+                </div>
+            </tr>
+        </table>
+        -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

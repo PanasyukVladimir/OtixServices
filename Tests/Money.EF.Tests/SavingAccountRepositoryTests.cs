@@ -22,10 +22,9 @@ namespace Money.EF.Tests
                 Id = 1,
                 Name = "SavingAccount1",
                 AccountCurrency = AccountCurrencyEnum.UAH,
-                Description = "SavingAccount1",
                 Balance = 5000,
                 GoalSavingBalance = 50000000,
-                UserId = 1
+                UserId = "1"
             };
 
             //Act
@@ -43,7 +42,7 @@ namespace Money.EF.Tests
             var savingAccountRepository = new SavingAccountRepository(_context);
 
             //Act
-            var allSavingAccounts = savingAccountRepository.GetAccountsByUserId(userId);
+            var allSavingAccounts = savingAccountRepository.GetAccountsByUserId(userId.ToString());
 
             //Assert
             Assert.IsInstanceOf<IEnumerable<SavingAccount>>(allSavingAccounts);
@@ -60,10 +59,9 @@ namespace Money.EF.Tests
                 Id = 10,
                 Name = "SavingAccount1",
                 AccountCurrency = AccountCurrencyEnum.UAH,
-                Description = "SavingAccount1",
                 Balance = 5000,
                 GoalSavingBalance = 500000,
-                UserId = 1
+                UserId = "1"
             };
 
             //Act
@@ -99,14 +97,12 @@ namespace Money.EF.Tests
 
             //Act
             savingAccount.Name = "newNameSavingAccount";
-            savingAccount.Description = "newDescriptionSavingAccount";
             savingAccountRepository.UpdateAccount(savingAccount);
             var updetedSavingAccount = savingAccountRepository.GetAccountById(1);
 
             //Assert
             Assert.IsInstanceOf(typeof(SavingAccount), updetedSavingAccount);
             Assert.AreEqual("newNameSavingAccount", updetedSavingAccount.Name);
-            Assert.AreEqual("newDescriptionSavingAccount", updetedSavingAccount.Description);
         }
     }
 }

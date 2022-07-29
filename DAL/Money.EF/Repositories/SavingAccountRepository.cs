@@ -21,7 +21,7 @@ namespace Money.EF.Repositories
             return _context.SavingAccounts.FirstOrDefault(c => c.Id == accountId);
         }
 
-        public IEnumerable<SavingAccount> GetAccountsByUserId(int userId)
+        public IEnumerable<SavingAccount> GetAccountsByUserId(string userId)
         {
             return _context.SavingAccounts.Where(c => c.UserId == userId);
         }

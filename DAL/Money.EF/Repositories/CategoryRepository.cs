@@ -16,7 +16,7 @@ namespace Money.EF.Repositories
             _context = context;
         }
 
-        public IEnumerable<Category> GetAllCategoriesByUserId(int userId)
+        public IEnumerable<Category> GetAllCategoriesByUserId(string userId)
         {
             return _context.Categories.Where(c => c.UserId == userId);
         }

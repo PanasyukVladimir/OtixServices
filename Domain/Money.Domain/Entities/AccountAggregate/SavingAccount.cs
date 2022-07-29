@@ -13,7 +13,7 @@ namespace Money.Domain.Entities.AccountAggregate
     public class SavingAccount : BaseAccount
     {
         public double GoalSavingBalance { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
         //public User User { get; set; }
         public List<SavingAccountTransaction> SavingAccountTransactions { get; set; }

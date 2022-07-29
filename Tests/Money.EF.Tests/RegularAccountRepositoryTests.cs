@@ -22,11 +22,9 @@ namespace Money.EF.Tests
                 Id = 1,
                 Name = "RegularAccount1",
                 AccountCurrency = AccountCurrencyEnum.UAH,
-                Description = "RegularAccount1",
                 Balance = 5000,
-                CreditLimit = 0,
                 TypeRegularAccount = TypeRegularAccountEnum.Card,
-                UserId = 1
+                UserId = "1"
             };
 
             //Act
@@ -38,7 +36,7 @@ namespace Money.EF.Tests
         }
 
         [TestCase(1)]
-        public void GetAccountsByUserIdTest(int userId)
+        public void GetAccountsByUserIdTest(string userId)
         {
             //Arrange
             var regularAccountRepository = new RegularAccountRepository(_context);
@@ -61,11 +59,9 @@ namespace Money.EF.Tests
                 Id = 10,
                 Name = "RegularAccount3",
                 AccountCurrency = AccountCurrencyEnum.UAH,
-                Description = "RegularAccount3",
                 Balance = 50000,
-                CreditLimit = 0,
                 TypeRegularAccount = TypeRegularAccountEnum.Card,
-                UserId = 1,
+                UserId = "1",
             };
 
             //Act
@@ -101,14 +97,12 @@ namespace Money.EF.Tests
 
             //Act
             regularAccount.Name = "newNameRegularAccount";
-            regularAccount.Description = "newDescriptionRegularAccount";
             regularAccountRepository.UpdateAccount(regularAccount);
             var updetedRegularAccount = regularAccountRepository.GetAccountById(1);
 
             //Assert
             Assert.IsInstanceOf(typeof(RegularAccount), updetedRegularAccount);
             Assert.AreEqual("newNameRegularAccount", updetedRegularAccount.Name);
-            Assert.AreEqual("newDescriptionRegularAccount", updetedRegularAccount.Description);
         }
     }
 }

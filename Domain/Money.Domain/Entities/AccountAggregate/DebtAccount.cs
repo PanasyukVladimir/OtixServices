@@ -12,7 +12,7 @@ namespace Money.Domain.Entities.AccountAggregate
     /// </summary>
     public class DebtAccount : BaseAccount
     {
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
         //public User User { get; set; }
         public List<DebtAccountTransaction> DebtAccountTransactions { get; set; }

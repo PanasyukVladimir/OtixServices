@@ -13,7 +13,7 @@ namespace Money.EF.Tests
     public class CategoryRepositoryTests : MoneyDBTestBase
     {
         [TestCase(1)]
-        public void GetAllCategoriesByUserIdTest(int userId)
+        public void GetAllCategoriesByUserIdTest(string userId)
         {
             //Arrange
             var categoryRepository = new CategoryRepository(_context);
@@ -36,10 +36,9 @@ namespace Money.EF.Tests
                 Id = 1,
                 Name = "Category1",
                 CategoryCurrency = CategoryCurrencyEnum.UAH,
-                Description = "Category1",
                 Balance = 0,
                 TypeCategory = TypeCategoryEnum.Expenses,
-                UserId = 1
+                UserId = "1"
             };
 
             //Act
@@ -60,10 +59,9 @@ namespace Money.EF.Tests
                 Id = 10,
                 Name = "Category1",
                 CategoryCurrency = CategoryCurrencyEnum.UAH,
-                Description = "Category1",
                 Balance = 0,
                 TypeCategory = TypeCategoryEnum.Expenses,
-                UserId = 1
+                UserId = "1"
             };
 
             //Act
@@ -99,14 +97,12 @@ namespace Money.EF.Tests
 
             //Act
             category.Name = "newNameCategory";
-            category.Description = "newDescriptionCategory";
             categoryRepository.UpdateCategory(category);
             var updetedCategory = categoryRepository.GetCategoryById(1);
 
             //Assert
             Assert.IsInstanceOf(typeof(Category), updetedCategory);
             Assert.AreEqual("newNameCategory", updetedCategory.Name);
-            Assert.AreEqual("newDescriptionCategory", updetedCategory.Description);
         }
     }
 }
